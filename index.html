@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web develop chap 1</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        
+            body {
+            font-family: "Exo 2", sans-serif;
+            background-color: #f8fafc;
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+            color: #1e2937;
+        }
+        
+        /* Navbar */
+        nav {
+            background-color: #1e3a8a;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+        
+        .logo {
+            font-family: "Bungee", sans-serif;
+            font-size: 24px;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .menu {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .menu li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .menu li a:hover {
+            color: #60a5fa;
+        }
+        
+        /* Tombol */
+        .btn {
+            padding: 10px 22px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background-color: #3b82f6;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #2563eb;
+            transform: translateY(-3px);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-outline:hover {
+            background: white;
+            color: #1e3a8a;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            color: white;
+            text-align: center;
+            padding: 100px 20px 80px;
+        }
+        
+        h1 {
+            font-family: "Bungee", sans-serif;
+            margin: 0;
+            font-size: 62px;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            font-family: 'Times New Roman', sans-serif;
+            font-size: 22px;
+            margin: 15px 0 25px;
+            opacity: 0.95;
+        }
+        
+        .header-buttons {
+            margin-top: 30px;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .about {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+        
+        .about img {
+            width: 280px;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .about img:hover {
+            transform: scale(1.05);
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 320px;
+        }
+        
+        h2 {
+            font-family: "Bungee", sans-serif;
+            color: #1e40af;
+            margin-bottom: 20px;
+            font-size: 32px;
+        }
+        
+        p {
+            font-size: 17.5px;
+            margin-bottom: 18px;
+        }
+        
+        .section {
+            margin-bottom: 70px;
+        }
+        
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .skill-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+        }
+        
+        .progress-bar {
+            height: 10px;
+            background: #e2e8f0;
+            border-radius: 10px;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+        
+        .progress {
+            height: 100%;
+            background: linear-gradient(90deg, #3b82f6, #1e40af);
+            border-radius: 10px;
+        }
+        
+        footer {
+            background-color: #1e3a8a;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+            margin-top: 80px;
+        }
+        
+        .social-links {
+            margin: 25px 0;
+        }
+        
+        .social-links a {
+            color: white;
+            margin: 0 15px;
+            font-size: 26px;
+            transition: transform 0.3s;
+        }
+        
+        .social-links a:hover {
+            transform: scale(1.3);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .menu {
+                display: none; /* nanti bisa ditambah hamburger menu */
+            }
+            h1 {
+                font-size: 48px;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+          <a href="#about" class="logo">ARIP</a>  
+          <ul class="menu">
+              <li><a href="#about">about gua</a></li>
+              <li><a href="about">my cita cita</a></li>
+              <li><a href="progress">progres</a></li>
+              <li><a href="skills">my keahlian</a></li>
+          </ul>
+          <a href="https://wa.me/62882006311195?text=kamu+keren+banget"  class="btn btn-primary">Hubungi gua</a>
+        </div>
+        
+        
+    </nav>
+    
+    <header>
+        <h1>hai semua</h1>
+      <p style="font-family: 'Times New Roman', sans-serif; font-size: 20px; margin: 10px;">
+    selamat datang di proyek magang
+</p>
+    </header>
+    
+        <div class="container">
+            
+            <div id="about" class="about section">
+                <img src="goyounjung.jpg" alt="biografi">
+                
+                <div class="about-text">
+                    <h2>tentang saya</h2>
+                    <p>saya <strong>rifqi reza zulfikar</strong>,  siswa mtsn surakarta 1,kelahiran 3 desember 2010</p>
+                    <p>saya sedang belajar web development untuk mencari uang sedikit demi sedikit agar saat sma saya bisa travelling ke tempat impian saya</p>
+                    <p>
+Saya ingin jalan-jalan ke pantai-pantai indah, gunung-gunung keren, dan kota-kota yang selama ini hanya saya lihat di video. Makanya saya pilih belajar web dev, karena skill ini bisa menghasilkan uang meski masih sekolah. Mulai dari bikin website sederhana sampai membantu orang lain buat website kecil-kecilan.</p>
+                    
+                    <a href="https://www.tiktok.com/@tenacious_folivora?_r=1&_t=ZS-95CLMvtHPrI" class="btn btn-primary _blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.instagram.com/zycu_e?igsh=enEzankweGcyYXFz" class="btn btn-primary _blank"><i class="fab fa-instagram"></i></a>
+                    <a href="wa.me/62882006311195?text=kamu+keren+banget" class="btn btn-primary _blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://open.spotify.com/playlist/1wA4aMDi7ncYs2ushllov2?si=9WTKWQrdQgmHZsFrEOahsw" class="btn btn-primary _blank"><i class="fab fa-spotify"></i></a>
+                    
+                </div>
+            </div>
+            
+            
+            <div id="goals" class="section">              
+                <h2>tujuan & cita cita</h2>               
+                <a href="tujuan.html" class="btn btn-primary _blank">pencey iniy</a>        </div>
+                  
+        
+        <div id="progress" class="section">
+            
+                <h2>Perkembangan</h2>
+                <p>Ini adalah halaman pertama yang saya buat sendiri. Masih sangat sederhana, tapi saya akan terus update setiap kali belajar hal baru.</p>
+
+<p>Target bulan depan: sudah bisa membuat website dengan JavaScript yang interaktif.</p>
+            </div>
+        </div>
+        
+        <footer>
+            <p>terimakasih telah menyempatkan waktu untuk melihat progress saya</p>
+            <p>© 2026 • Zee Sedang Belajar Menjadi Web Developer</p>
+        </footer>
+        
+        </body>
+        </html>
+        
+        
+        
